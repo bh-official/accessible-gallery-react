@@ -44,7 +44,6 @@
 /* Thumbnails area stays inside viewport */
 .gallery-thumbnails {
     position: relative;
-  z-index: 5;
   height: 110px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -119,20 +118,17 @@
   width: 34px;
   height: 34px;
 
-  font-size: 18px;
-  line-height: 1;
-
   background: rgba(0,0,0,0.6);
   color: white;
   border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 6px;
+  border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  /* transition: background 0.2s ease, transform 0.2s ease; */
 }
 
 .thumb-toggle-btn:hover {
@@ -147,6 +143,11 @@
 
 .thumb-toggle-btn:active {
   transform: translate(-50%, -50%) scale(0.92);
+}
+
+.thumbnails-wrapper {
+  position: relative;
+  background: #222;
 }
 
 
