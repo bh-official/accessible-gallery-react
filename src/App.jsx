@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Gallery from "./components/Gallery.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    async function fetchImages() {
+      try {
+        const res = await fetch("/api/images.json");
+        const data = await res.json();
+        setImages(data);
+      } catch (error) {
+        console.error("Failed to fetch images:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchImages();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        {" "}
+        Loading Gallery...
+      </div>
+    );
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="h-screen bg-neutral-900 text-white">
+      <Gallery images={images} />
+    </div>
+  );
 }
-
-export default App
