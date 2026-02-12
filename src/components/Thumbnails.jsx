@@ -8,11 +8,7 @@ export default function Thumbnails({ images, currentIndex, setCurrentIndex }) {
           className={index === currentIndex ? "active" : ""}
           aria-label={`View ${img.caption}`}
         >
-          <img
-            src={img.src}
-            alt={img.alt}
-            className="h-20 w-28 object-cover rounded"
-          />
+          <img src={img.src} alt={img.alt} />
         </button>
       ))}
     </div>
