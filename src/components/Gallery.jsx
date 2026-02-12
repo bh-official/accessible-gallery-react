@@ -63,7 +63,7 @@ export default function Gallery({ images }) {
           onClick={toggleThumbnails}
           aria-label="Toggle thumbnails"
         >
-          {showThumbnails ? "Hide" : "Show"}
+          {showThumbnails ? "▾" : "▴"}
         </button>
       </div>
 

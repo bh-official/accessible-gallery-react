@@ -116,19 +116,27 @@
   top: 0;
   z-index: 25;
 
-  padding: 6px 10px;
-  font-size: 13px;
+  width: 34px;
+  height: 34px;
+
+  font-size: 18px;
+  line-height: 1;
 
   background: rgba(0,0,0,0.6);
   color: white;
   border: 1px solid rgba(255,255,255,0.4);
   border-radius: 6px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .thumb-toggle-btn:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.95);
 }
 
 /* Wrapper sits at the boundary between viewer and thumbnails */
@@ -136,4 +144,9 @@
   position: relative;
   height: 0;
 }
+
+.thumb-toggle-btn:active {
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
 
