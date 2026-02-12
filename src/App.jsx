@@ -29,7 +29,7 @@ export default function App() {
     );
   }
   return (
-    <div className="h-screen bg-neutral-900 text-white">
+    <div className="w-full h-full bg-neutral-900 text-white">
       <Gallery images={images} />
     </div>
   );

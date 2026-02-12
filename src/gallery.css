@@ -1,10 +1,17 @@
 /* Make the gallery fill the full window */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+
 .gallery-container {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   
    overflow: hidden;
-  background: #171717;
+  background: #000;
   color: white;
   position: relative;
 }
@@ -23,13 +30,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: #000;
 }
 
 .gallery-viewer img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Caption overlay */
@@ -45,9 +52,9 @@
 /* Thumbnails area stays inside viewport */
 .gallery-thumbnails {
   position: absolute;
-  bottom: 0;
+  bottom: 50px;
   left: 50%;
-  right: 0;
+
   transform: translateX(-50%);
 
   width: 80%;
@@ -153,7 +160,7 @@
 
 /* Slide down when hidden */
 .gallery-thumbnails.closed {
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 150%);
 }
 
 /* Normal position */
@@ -163,7 +170,6 @@
 
 .gallery-toggle {
   position: absolute;
-  /* bottom: 110px;    */
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -172,22 +178,22 @@
 
 /* When thumbnails are visible */
 .gallery-toggle.open {
-  bottom: 110px;   /* sit above strip */
+  bottom: 160px;   /* sit above strip */
 }
 
 /* When thumbnails are hidden */
 .gallery-toggle.closed {
-  bottom: 10px;    /* move down near bottom */
+  bottom: 50px;    /* move down near bottom */
 }
 
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.4);
   background: rgba(0,0,0,0.6);
   color: white;
   font-size: 18px;
@@ -202,6 +208,11 @@
 .nav-btn.next {
   right: 20px;
 }
+
+.nav-btn:hover {
+  background: rgba(0,0,0,0.95);
+}
+
 
 
 

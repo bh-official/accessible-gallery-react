@@ -62,7 +62,7 @@ export default function Gallery({ images }) {
           onClick={handlePrev}
           aria-label="Previous image"
         >
-          ◀
+          ◂
         </button>
 
         <button
@@ -70,7 +70,7 @@ export default function Gallery({ images }) {
           onClick={handleNext}
           aria-label="Next image"
         >
-          ▶
+          ▸
         </button>
 
         <div className="gallery-search-overlay">
