@@ -2,11 +2,11 @@
 .gallery-container {
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  overflow: hidden;
+  
+   overflow: hidden;
   background: #171717;
   color: white;
+  position: relative;
 }
 
 /* Search stays fixed height */
@@ -17,7 +17,8 @@
 
 /* Viewer takes all remaining space */
 .gallery-viewer {
-  position: relative;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -43,14 +44,28 @@
 
 /* Thumbnails area stays inside viewport */
 .gallery-thumbnails {
-    position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  transform: translateX(-50%);
+
+  width: 80%;
+  max-width: 900px;
+
   height: 110px;
-  overflow-x: auto;
-  overflow-y: hidden;
   display: flex;
   gap: 10px;
   padding: 10px;
+
   background: #222;
+   border-radius: 16px;
+
+  overflow-x: auto;
+  transition: transform 0.35s ease;
+
+
+
 }
 
 .gallery-thumbnails button {
@@ -109,26 +124,17 @@
 }
 
 .thumb-toggle-btn {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 0;
-  z-index: 25;
 
-  width: 34px;
-  height: 34px;
-
-  background: rgba(0,0,0,0.6);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.4);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  font-size: 18px;
 
   cursor: pointer;
-  /* transition: background 0.2s ease, transform 0.2s ease; */
 }
 
 .thumb-toggle-btn:hover {
@@ -141,13 +147,38 @@
   height: 0;
 }
 
-.thumb-toggle-btn:active {
-  transform: translate(-50%, -50%) scale(0.92);
+
+
+
+
+/* Slide down when hidden */
+.gallery-thumbnails.closed {
+  transform: translate(-50%, 100%);
 }
 
-.thumbnails-wrapper {
-  position: relative;
-  background: #222;
+/* Normal position */
+.gallery-thumbnails.open {
+  transform: translate(-50%, 0);
 }
+
+.gallery-toggle {
+  position: absolute;
+  /* bottom: 110px;    */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  transition: bottom 0.35s ease;
+}
+
+/* When thumbnails are visible */
+.gallery-toggle.open {
+  bottom: 110px;   /* sit above strip */
+}
+
+/* When thumbnails are hidden */
+.gallery-toggle.closed {
+  bottom: 10px;    /* move down near bottom */
+}
+
 
 
