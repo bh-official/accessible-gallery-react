@@ -3,7 +3,7 @@ export default function Viewer({ image }) {
     <div>
       <img src={image.src} srcSet={image.srcset} alt={image.alt} />
 
-      <p>{image.caption}</p>
+      <div className="gallery-caption">{image.caption}</div>
     </div>
   );
 }

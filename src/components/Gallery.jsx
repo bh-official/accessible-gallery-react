@@ -45,16 +45,37 @@ export default function Gallery({ images }) {
     setCurrentIndex(0);
   }, [searchTerm]);
 
+  function handleNext() {
+    setCurrentIndex((i) => (i + 1) % filteredImages.length);
+  }
+
+  function handlePrev() {
+    setCurrentIndex((i) => (i === 0 ? filteredImages.length - 1 : i - 1));
+  }
+
   return (
     <div className="gallery-container">
       <div className="gallery-viewer">
         <Viewer image={currentImage} />
+        <button
+          className="nav-btn prev"
+          onClick={handlePrev}
+          aria-label="Previous image"
+        >
+          ◀
+        </button>
+
+        <button
+          className="nav-btn next"
+          onClick={handleNext}
+          aria-label="Next image"
+        >
+          ▶
+        </button>
 
         <div className="gallery-search-overlay">
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
-
-        <div className="gallery-caption">{currentImage.caption}</div>
       </div>
 
       <div className={`gallery-toggle ${showThumbnails ? "open" : "closed"}`}>
