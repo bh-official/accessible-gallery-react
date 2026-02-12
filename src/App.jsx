@@ -3,34 +3,57 @@ import Gallery from "./components/Gallery.jsx";
 
 export default function App() {
   const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [defaultImages, setDefaultImages] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    async function fetchImages() {
-      try {
-        const res = await fetch("/api/images.json");
-        const data = await res.json();
-        setImages(data);
-      } catch (error) {
-        console.error("Failed to fetch images:", error);
-      } finally {
-        setLoading(false);
-      }
+    async function fetchDefaultImages() {
+      const res = await fetch("/api/images.json");
+      const data = await res.json();
+
+      setImages(data);
+      setDefaultImages(data);
     }
-    fetchImages();
+    fetchDefaultImages();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        {" "}
-        Loading Gallery...
-      </div>
-    );
-  }
+  // Fetch Unsplash when searching
+  useEffect(() => {
+    async function fetchUnsplash() {
+      if (!searchTerm.trim()) {
+        setImages(defaultImages);
+        return;
+      }
+
+      try {
+        const res = await fetch(
+          `https://api.unsplash.com/search/photos?query=${searchTerm}&per_page=12&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`,
+        );
+
+        const data = await res.json();
+
+        const formatted = data.results.map((img) => ({
+          id: img.id,
+          src: img.urls.regular,
+          srcset: `${img.urls.small} 600w, ${img.urls.regular} 1200w`,
+          alt: img.alt_description || "Unsplash image",
+          caption: img.description || img.alt_description || "Untitled image",
+        }));
+
+        setImages(formatted);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchUnsplash();
+  }, [searchTerm, defaultImages]);
+
   return (
-    <div className="w-full h-full bg-neutral-900 text-white">
-      <Gallery images={images} />
-    </div>
+    <Gallery
+      images={images}
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+    />
   );
 }

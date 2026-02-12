@@ -4,53 +4,51 @@ import Thumbnails from "./Thumbnails";
 import SearchBar from "./SearchBar";
 import "../gallery.css";
 
-export default function Gallery({ images }) {
+export default function Gallery({ images, searchTerm, setSearchTerm }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [searchTerm, setSearchTerm] = useState("");
+
   const [showThumbnails, setShowThumbnails] = useState(true);
 
   function toggleThumbnails() {
     setShowThumbnails((prev) => !prev);
   }
 
-  const filteredImages = images.filter((img) =>
-    img.caption.toLowerCase().includes(searchTerm.toLowerCase()),
-  );
-
-  if (!filteredImages.length) {
-    return <p className="p-4">No images found.</p>;
-  }
-
-  const currentImage = filteredImages[currentIndex];
-
   // Keyboard navigation (Accessibility)
   useEffect(() => {
     function handleKey(e) {
-      if (!filteredImages.length) return;
+      if (!images.length) return;
 
       if (e.key === "ArrowRight") {
-        setCurrentIndex((i) => (i + 1) % filteredImages.length);
+        setCurrentIndex((i) => (i + 1) % images.length);
       }
 
       if (e.key === "ArrowLeft") {
-        setCurrentIndex((i) => (i === 0 ? filteredImages.length - 1 : i - 1));
+        setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
       }
     }
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [filteredImages]);
+  }, [images.length]);
 
   useEffect(() => {
-    setCurrentIndex(0);
-  }, [searchTerm]);
+    if (currentIndex >= images.length) {
+      setCurrentIndex(0);
+    }
+  }, [images.length]);
+
+  if (!images.length) {
+    return <p className="p-4">No images found.</p>;
+  }
+
+  const currentImage = images[currentIndex];
 
   function handleNext() {
-    setCurrentIndex((i) => (i + 1) % filteredImages.length);
+    setCurrentIndex((i) => (i + 1) % images.length);
   }
 
   function handlePrev() {
-    setCurrentIndex((i) => (i === 0 ? filteredImages.length - 1 : i - 1));
+    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
   }
 
   return (
@@ -89,7 +87,7 @@ export default function Gallery({ images }) {
       </div>
 
       <Thumbnails
-        images={filteredImages}
+        images={images}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
         showThumbnails={showThumbnails}

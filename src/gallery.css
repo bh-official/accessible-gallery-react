@@ -213,6 +213,26 @@ html, body, #root {
   background: rgba(0,0,0,0.95);
 }
 
+/* Horizontal scrollbar styling for thumbnails */
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 8px;   /* because your thumbnails scroll horizontally */
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+
 
 
 
