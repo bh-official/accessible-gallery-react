@@ -43,6 +43,8 @@
 
 /* Thumbnails area stays inside viewport */
 .gallery-thumbnails {
+    position: relative;
+  z-index: 5;
   height: 110px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -109,9 +111,10 @@
 
 .thumb-toggle-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 20;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+  z-index: 25;
 
   padding: 6px 10px;
   font-size: 13px;
@@ -126,5 +129,11 @@
 
 .thumb-toggle-btn:hover {
   background: rgba(0,0,0,0.8);
+}
+
+/* Wrapper sits at the boundary between viewer and thumbnails */
+.thumbnail-toggle-wrapper {
+  position: relative;
+  height: 0;
 }
 

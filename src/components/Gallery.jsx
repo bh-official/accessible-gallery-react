@@ -50,6 +50,14 @@ export default function Gallery({ images }) {
       <div className="gallery-viewer">
         <Viewer image={currentImage} />
 
+        <div className="gallery-search-overlay">
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </div>
+
+        <div className="gallery-caption">{currentImage.caption}</div>
+      </div>
+
+      <div className="thumbnail-toggle-wrapper">
         <button
           className="thumb-toggle-btn"
           onClick={toggleThumbnails}
@@ -57,12 +65,6 @@ export default function Gallery({ images }) {
         >
           {showThumbnails ? "Hide" : "Show"}
         </button>
-
-        <div className="gallery-search-overlay">
-          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </div>
-
-        <div className="gallery-caption">{currentImage.caption}</div>
       </div>
 
       {showThumbnails && (
