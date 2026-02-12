@@ -74,8 +74,8 @@
 .gallery-search-overlay {
   position: absolute;
   top: 12px;
-  left: 12px;
-  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Make it small and subtle */
