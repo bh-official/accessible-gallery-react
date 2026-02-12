@@ -5,6 +5,16 @@ export default function App() {
   const [images, setImages] = useState([]);
   const [defaultImages, setDefaultImages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
+
+  // Debounce search input
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(searchTerm);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
 
   useEffect(() => {
     async function fetchDefaultImages() {
@@ -20,14 +30,14 @@ export default function App() {
   // Fetch Unsplash when searching
   useEffect(() => {
     async function fetchUnsplash() {
-      if (!searchTerm.trim()) {
+      if (!debouncedSearch.trim()) {
         setImages(defaultImages);
         return;
       }
 
       try {
         const res = await fetch(
-          `https://api.unsplash.com/search/photos?query=${searchTerm}&per_page=12&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`,
+          `https://api.unsplash.com/search/photos?query=${debouncedSearch}&per_page=12&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`,
         );
 
         const data = await res.json();
@@ -47,7 +57,7 @@ export default function App() {
     }
 
     fetchUnsplash();
-  }, [searchTerm, defaultImages]);
+  }, [debouncedSearch, defaultImages]);
 
   return (
     <Gallery
