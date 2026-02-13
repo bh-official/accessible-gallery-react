@@ -105,7 +105,6 @@ Behaviour:
 
 - `setIsLoading(true)` before API call
 - `setIsLoading(false)` in `finally` block after request completes
-- Displays a temporary loading overlay with `Loding image` text inside the Gallery viewer
 - Maintains layout stability while new images load
 
 ---
