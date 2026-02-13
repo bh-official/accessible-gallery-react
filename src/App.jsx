@@ -25,8 +25,12 @@ export default function App() {
 
       setImages(data);
       setDefaultImages(data);
-      setIsInitialLoading(false);
+
+      setTimeout(() => {
+        setIsInitialLoading(false);
+      }, 5000);
     }
+
     fetchDefaultImages();
   }, []);
 
