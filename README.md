@@ -181,7 +181,7 @@ Controlled input component for search functionality.
 
 ---
 
-# Assignment Requirements Achieved
+# Requirements Achieved
 
 - Implemented `useState` to manage selected image, thumbnail visibility, search term, and loading states
 - Used `useEffect` for initial image fetching and dynamic API updates
