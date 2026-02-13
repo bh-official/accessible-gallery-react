@@ -13,9 +13,26 @@ export default function Gallery({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [showThumbnails, setShowThumbnails] = useState(true);
+  const [isFading, setIsFading] = useState(false);
 
   function toggleThumbnails() {
     setShowThumbnails((prev) => !prev);
+  }
+
+  function handleNext() {
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex((i) => (i + 1) % images.length);
+      setIsFading(false);
+    }, 200);
+  }
+
+  function handlePrev() {
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+      setIsFading(false);
+    }, 200);
   }
 
   // Keyboard navigation (Accessibility)
@@ -24,11 +41,15 @@ export default function Gallery({
       if (!images.length) return;
 
       if (e.key === "ArrowRight") {
-        setCurrentIndex((i) => (i + 1) % images.length);
+        e.preventDefault();
+
+        handleNext();
       }
 
       if (e.key === "ArrowLeft") {
-        setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+        e.preventDefault();
+
+        handlePrev();
       }
     }
 
@@ -44,14 +65,6 @@ export default function Gallery({
 
   const currentImage = images.length > 0 ? images[currentIndex] : null;
 
-  function handleNext() {
-    setCurrentIndex((i) => (i + 1) % images.length);
-  }
-
-  function handlePrev() {
-    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
-  }
-
   return (
     <div className="gallery-container">
       <div className="gallery-viewer">
@@ -65,7 +78,7 @@ export default function Gallery({
           </div>
         )}
 
-        {currentImage && <Viewer image={currentImage} />}
+        {currentImage && <Viewer image={currentImage} isFading={isFading} />}
 
         {isLoading && (
           <div className="loading-overlay">

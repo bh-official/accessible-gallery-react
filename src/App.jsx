@@ -28,7 +28,7 @@ export default function App() {
 
       setTimeout(() => {
         setIsInitialLoading(false);
-      }, 5000);
+      }, 2000);
     }
 
     fetchDefaultImages();
@@ -54,7 +54,7 @@ export default function App() {
           id: img.id,
           src: `${img.urls.raw}&w=1600&fit=max`,
           srcset: `
-  ${img.urls.raw}&w=800&&fit=max 800w,
+  ${img.urls.raw}&w=800&fit=max 800w,
   ${img.urls.raw}&w=1600&fit=max 1600w
 `,
 
