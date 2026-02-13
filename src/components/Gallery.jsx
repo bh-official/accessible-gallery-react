@@ -42,11 +42,11 @@ export default function Gallery({
     }
   }, [images.length]);
 
-  if (!images.length && !isLoading) {
-    return <p className="p-4">No images found.</p>;
-  }
+  //   if (!images.length && !isLoading) {
+  //     return <p className="p-4">No images found.</p>;
+  //   }
 
-  const currentImage = images[currentIndex];
+  const currentImage = images.length > 0 ? images[currentIndex] : null;
 
   function handleNext() {
     setCurrentIndex((i) => (i + 1) % images.length);
@@ -59,7 +59,18 @@ export default function Gallery({
   return (
     <div className="gallery-container">
       <div className="gallery-viewer">
-        <Viewer image={currentImage} />
+        {!images.length && !isLoading && (
+          <div className="empty-state">
+            <p>No images found. Try another search.</p>
+
+            <button className="reset-btn" onClick={() => setSearchTerm("")}>
+              Back to Gallery
+            </button>
+          </div>
+        )}
+
+        {currentImage && <Viewer image={currentImage} />}
+
         {isLoading && (
           <div className="loading-overlay">
             <div className="spinner"></div>
@@ -87,23 +98,27 @@ export default function Gallery({
         </div>
       </div>
 
-      <div className={`gallery-toggle ${showThumbnails ? "open" : "closed"}`}>
-        <button
-          className="thumb-toggle-btn"
-          onClick={toggleThumbnails}
-          aria-label="Toggle thumbnails"
-        >
-          {showThumbnails ? "▾" : "▴"}
-        </button>
-      </div>
+      {images.length > 0 && (
+        <div className={`gallery-toggle ${showThumbnails ? "open" : "closed"}`}>
+          <button
+            className="thumb-toggle-btn"
+            onClick={toggleThumbnails}
+            aria-label="Toggle thumbnails"
+          >
+            {showThumbnails ? "▾" : "▴"}
+          </button>
+        </div>
+      )}
 
-      <Thumbnails
-        images={images}
-        currentIndex={currentIndex}
-        setCurrentIndex={setCurrentIndex}
-        showThumbnails={showThumbnails}
-        toggleThumbnails={toggleThumbnails}
-      />
+      {images.length > 0 && (
+        <Thumbnails
+          images={images}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          showThumbnails={showThumbnails}
+          toggleThumbnails={toggleThumbnails}
+        />
+      )}
     </div>
   );
 }
