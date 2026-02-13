@@ -80,12 +80,6 @@ export default function Gallery({
 
         {currentImage && <Viewer image={currentImage} isFading={isFading} />}
 
-        {isLoading && (
-          <div className="loading-overlay">
-            <div className="spinner"></div>
-          </div>
-        )}
-
         {images.length > 0 && (
           <>
             <button

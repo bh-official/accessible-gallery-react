@@ -245,7 +245,7 @@ body {
 
 /* Horizontal scrollbar styling for thumbnails */
 .gallery-thumbnails::-webkit-scrollbar {
-  height: 8px; /* because your thumbnails scroll horizontally */
+  height: 8px; /* because the thumbnails scroll horizontally */
 }
 
 .gallery-thumbnails::-webkit-scrollbar-track {
