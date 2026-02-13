@@ -71,8 +71,13 @@ export default function App() {
 
   if (isInitialLoading) {
     return (
-      <div className="loading-overlay">
-        <div className="spinner"></div>
+      <div className="portfolio-loading">
+        <div className="loading-content">
+          <h1 className="loading-title">Accessible Gallery</h1>
+          <div className="loading-bar">
+            <div className="loading-progress"></div>
+          </div>
+        </div>
       </div>
     );
   }
