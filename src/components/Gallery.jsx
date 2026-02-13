@@ -42,9 +42,7 @@ export default function Gallery({
     }
   }, [images.length]);
 
-  //   if (!images.length && !isLoading) {
-  //     return <p className="p-4">No images found.</p>;
-  //   }
+
 
   const currentImage = images.length > 0 ? images[currentIndex] : null;
 

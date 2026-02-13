@@ -46,10 +46,10 @@ export default function App() {
 
         const formatted = data.results.map((img) => ({
           id: img.id,
-          src: `${img.urls.raw}&w=1600&h=900&fit=crop`,
+          src: `${img.urls.raw}&w=1600&fit=max`,
           srcset: `
-  ${img.urls.raw}&w=800&h=450&fit=crop 800w,
-  ${img.urls.raw}&w=1600&h=900&fit=crop 1600w
+  ${img.urls.raw}&w=800&&fit=max 800w,
+  ${img.urls.raw}&w=1600&fit=max 1600w
 `,
 
           alt: img.alt_description || "Unsplash image",

@@ -10,15 +10,12 @@ body {
 }
 
 .gallery-container {
-   
-  height: 100dvh;  /* dynamic viewport height */
-  width: 100%;
-  
-   overflow: hidden;
+  inset: 0;
+  overflow: hidden;
   background: #000;
   color: white;
   position: fixed;
-  min-height: 100dvh;
+
 }
 
 /* Search stays fixed height */
@@ -32,24 +29,27 @@ body {
   position: fixed;
   inset: 0;
   overflow: hidden;
-  
-  justify-content: center;
-  align-items: center;
   background: #000;
-}
+ }
 
-/* .viewer-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   
-} */
+
 
 .gallery-viewer img {
     
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.4s ease;
+  object-position: center;
+  position: absolute;
 }
+
+.viewer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* Caption overlay */
 .gallery-caption {
@@ -78,7 +78,7 @@ body {
   padding: 10px;
 
   background: #222;
-   border-radius: 16px;
+  border-radius: 16px;
 
   overflow-x: auto;
   transition: transform 0.35s ease;
@@ -244,7 +244,7 @@ body {
   background: rgba(255, 255, 255, 0.45);
 }
 .empty-state {
-   position: absolute;
+  position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
@@ -330,6 +330,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.4s ease;
   }
 
  

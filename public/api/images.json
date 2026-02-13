@@ -1,71 +1,71 @@
 [
   {
     "id": 1,
-    "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&fit=max&auto=format 1600w",
     "alt": "A river flowing through a forested valley with mountains in the background at sunset",
     "caption": "A peaceful mountain valley at sunset"
   },
   {
     "id": 2,
-    "src": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1600&fit=max&auto=format 1600w",
     "alt": "A field of orange flowers growing in tall grass against a bright sky",
     "caption": "A field of little orange flowers"
   },
   {
     "id": 3,
-    "src": "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1600&fit=max&auto=format 1600w",
     "alt": "The sun rising over layered mountain silhouettes with warm light",
     "caption": "Sunrise over distant mountains"
   },
   {
     "id": 4,
-    "src": "https://images.unsplash.com/photo-1768236360390-7ebed78c96b7?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1768236360390-7ebed78c96b7?w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1768236360390-7ebed78c96b7?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1768236360390-7ebed78c96b7?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1768236360390-7ebed78c96b7?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1768236360390-7ebed78c96b7?w=1600&fit=max&auto=format 1600w",
     "alt": "Frost-covered berries and leaves on a branch in winter",
     "caption": "Frost-covered berries in winter"
   },
   {
     "id": 5,
-    "src": "https://images.unsplash.com/photo-1767978918940-3772a9a61cc7?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1767978918940-3772a9a61cc7?w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1767978918940-3772a9a61cc7?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1767978918940-3772a9a61cc7?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1767978918940-3772a9a61cc7?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1767978918940-3772a9a61cc7?w=1600&fit=max&auto=format 1600w",
     "alt": "Snow-covered pine trees in a dense winter forest",
     "caption": "Snowy forest landscape"
   },
   {
     "id": 6,
-    "src": "https://images.unsplash.com/photo-1767337962049-19cc90b600aa?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1767337962049-19cc90b600aa?w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1767337962049-19cc90b600aa?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1767337962049-19cc90b600aa?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1767337962049-19cc90b600aa?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1767337962049-19cc90b600aa?w=1600&fit=max&auto=format 1600w",
     "alt": "Two pelicans standing near water with other birds in the background",
     "caption": "Pelicans by the shoreline"
   },
   {
     "id": 7,
-    "src": "https://images.unsplash.com/photo-1769112112632-26be33f821b0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1769112112632-26be33f821b0?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1769112112632-26be33f821b0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1769112112632-26be33f821b0?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1769112112632-26be33f821b0?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1769112112632-26be33f821b0?w=1600&fit=max&auto=format 1600w",
     "alt": "A solitary tree standing in thick mist with soft pink and blue sunrise tones in the sky",
     "caption": "Misty tree at sunrise"
   },
   {
     "id": 8,
-    "src": "https://images.unsplash.com/photo-1768124362690-2dceeda5e0d0?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1768124362690-2dceeda5e0d0?w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1768124362690-2dceeda5e0d0?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1768124362690-2dceeda5e0d0?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1768124362690-2dceeda5e0d0?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1768124362690-2dceeda5e0d0?w=1600&fit=max&auto=format 1600w",
     "alt": "A butterfly resting on a fluffy flower against a green background",
     "caption": "Butterfly on a wild flower"
   },
   {
     "id": 9,
-    "src": "https://images.unsplash.com/photo-1767786605468-3704cb130e3d?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1767786605468-3704cb130e3d?w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1767786605468-3704cb130e3d?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1767786605468-3704cb130e3d?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1767786605468-3704cb130e3d?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1767786605468-3704cb130e3d?w=1600&fit=max&auto=format 1600w",
     "alt": "A bee collecting pollen from a purple flower in close-up view",
     "caption": "Bee pollinating a flower"
   },
   {
     "id": 10,
-    "src": "https://images.unsplash.com/photo-1764484636506-cf6398999671?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "srcset": "https://images.unsplash.com/photo-1764484636506-cf6398999671?w=600&auto=format&fit=crop&ixlib=rb-4.1.0 600w, https://images.unsplash.com/photo-1764484636506-cf6398999671?w=1200&auto=format&fit=crop&ixlib=rb-4.1.0 1200w",
+    "src": "https://images.unsplash.com/photo-1764484636506-cf6398999671?w=1600&fit=max&auto=format",
+    "srcset": "https://images.unsplash.com/photo-1764484636506-cf6398999671?w=800&fit=max&auto=format 800w, https://images.unsplash.com/photo-1764484636506-cf6398999671?w=1600&fit=max&auto=format 1600w",
     "alt": "Sunflowers in a field glowing in warm sunlight during sunset",
     "caption": "Sunflowers at sunset"
   }
