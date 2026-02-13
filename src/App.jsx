@@ -7,6 +7,7 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
   const [isLoading, setIsLoading] = useState(false);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
 
   // Debounce search input
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function App() {
 
       setImages(data);
       setDefaultImages(data);
+      setIsInitialLoading(false);
     }
     fetchDefaultImages();
   }, []);
@@ -67,6 +69,13 @@ export default function App() {
     fetchUnsplash();
   }, [debouncedSearch, defaultImages]);
 
+  if (isInitialLoading) {
+    return (
+      <div className="loading-overlay">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
   return (
     <Gallery
       images={images}

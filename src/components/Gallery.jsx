@@ -42,8 +42,6 @@ export default function Gallery({
     }
   }, [images.length]);
 
-
-
   const currentImage = images.length > 0 ? images[currentIndex] : null;
 
   function handleNext() {
@@ -75,21 +73,25 @@ export default function Gallery({
           </div>
         )}
 
-        <button
-          className="nav-btn prev"
-          onClick={handlePrev}
-          aria-label="Previous image"
-        >
-          ◂
-        </button>
+        {images.length > 0 && (
+          <>
+            <button
+              className="nav-btn prev"
+              onClick={handlePrev}
+              aria-label="Previous image"
+            >
+              ◂
+            </button>
 
-        <button
-          className="nav-btn next"
-          onClick={handleNext}
-          aria-label="Next image"
-        >
-          ▸
-        </button>
+            <button
+              className="nav-btn next"
+              onClick={handleNext}
+              aria-label="Next image"
+            >
+              ▸
+            </button>
+          </>
+        )}
 
         <div className="gallery-search-overlay">
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
