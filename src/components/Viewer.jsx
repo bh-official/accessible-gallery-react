@@ -1,7 +1,12 @@
 export default function Viewer({ image }) {
   return (
     <div>
-      <img src={image.src} srcSet={image.srcset} alt={image.alt} />
+      <img
+        src={image.src}
+        srcSet={image.srcset}
+        alt={image.alt}
+        className="viewer-image"
+      />
 
       <div className="gallery-caption">{image.caption}</div>
     </div>

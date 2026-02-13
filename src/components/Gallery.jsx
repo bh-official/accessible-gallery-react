@@ -4,7 +4,12 @@ import Thumbnails from "./Thumbnails";
 import SearchBar from "./SearchBar";
 import "../gallery.css";
 
-export default function Gallery({ images, searchTerm, setSearchTerm }) {
+export default function Gallery({
+  images,
+  searchTerm,
+  setSearchTerm,
+  isLoading,
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [showThumbnails, setShowThumbnails] = useState(true);
@@ -37,7 +42,7 @@ export default function Gallery({ images, searchTerm, setSearchTerm }) {
     }
   }, [images.length]);
 
-  if (!images.length) {
+  if (!images.length && !isLoading) {
     return <p className="p-4">No images found.</p>;
   }
 
@@ -55,6 +60,12 @@ export default function Gallery({ images, searchTerm, setSearchTerm }) {
     <div className="gallery-container">
       <div className="gallery-viewer">
         <Viewer image={currentImage} />
+        {isLoading && (
+          <div className="loading-overlay">
+            <div className="spinner"></div>
+          </div>
+        )}
+
         <button
           className="nav-btn prev"
           onClick={handlePrev}

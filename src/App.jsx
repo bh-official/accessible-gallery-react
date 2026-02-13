@@ -6,6 +6,7 @@ export default function App() {
   const [defaultImages, setDefaultImages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState(searchTerm);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Debounce search input
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function App() {
       }
 
       try {
+        setIsLoading(true);
         const res = await fetch(
           `https://api.unsplash.com/search/photos?query=${debouncedSearch}&per_page=12&client_id=${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`,
         );
@@ -44,8 +46,12 @@ export default function App() {
 
         const formatted = data.results.map((img) => ({
           id: img.id,
-          src: img.urls.regular,
-          srcset: `${img.urls.small} 600w, ${img.urls.regular} 1200w`,
+          src: `${img.urls.raw}&w=1600&h=900&fit=crop`,
+          srcset: `
+  ${img.urls.raw}&w=800&h=450&fit=crop 800w,
+  ${img.urls.raw}&w=1600&h=900&fit=crop 1600w
+`,
+
           alt: img.alt_description || "Unsplash image",
           caption: img.description || img.alt_description || "Untitled image",
         }));
@@ -53,6 +59,8 @@ export default function App() {
         setImages(formatted);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -64,6 +72,7 @@ export default function App() {
       images={images}
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}
+      isLoading={isLoading}
     />
   );
 }
