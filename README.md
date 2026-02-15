@@ -13,7 +13,7 @@ In response to feedback from Week 4, a pre-render loading animation was implemen
 ## Live Demo
 
 **Render Deployment URL:**  
-https://accessible-gallery-react.onrender.com
+https://accessible-gallery-react-icec.onrender.com/
 
 **GitHub Repository URL:**  
 https://github.com/bh-official/accessible-gallery-react/tree/main
